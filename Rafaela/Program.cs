@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Rafaela.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<RafaelaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RafaelaContext") ?? throw new InvalidOperationException("Connection string 'RafaelaContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

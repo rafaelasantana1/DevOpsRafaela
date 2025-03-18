@@ -2,6 +2,11 @@
 {
     public class Aluno
     {
+        public Aluno()
+        {
+            
+        }
+
         public Guid Id { get; set; }
         public string? Nome { get; set; }
         public string? Rgm { get; set; }
